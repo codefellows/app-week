@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
+
+<p>
+  <strong>Repo:</strong>
+  <%= @project.repo %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @project.url %>
+</p>
+
+<p>
+  <strong>Members</strong>
+</p>
+
+<p>
+  <%= render 'members/table' if @members.present? %>
+</p>
+
+
+<%= link_to('Add Member', new_member_path) if @members.length < 5 %> |
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
